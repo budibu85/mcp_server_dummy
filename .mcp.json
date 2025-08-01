@@ -1,0 +1,30 @@
+{
+  "servers": {
+    "MCP-Server-Dummy": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "."
+      ],
+      "env": {
+        "WEATHER_CHOICES": "soleggiato,umido,gelido,perfetto"
+      }
+    },
+    "MCP-Server-Dummy-Docker": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "WEATHER_CHOICES",
+        "mcpserverdummy:latest"
+      ],
+      "env": {
+        "WEATHER_CHOICES": "soleggiato,umido,gelido,perfetto"
+      }
+    }
+  }
+}

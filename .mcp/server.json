@@ -1,0 +1,21 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/draft/2025-07-09/server.json",
+  "description": "My Dummy MCP Server",
+  "name": "io.github.budibu85/mcp_server_dummy",
+  "packages": [
+    {
+      "registry_name": "nuget",
+      "name": "MCP.Server.Dummy",
+      "version": "0.1.0-beta",
+      "package_arguments": [],
+      "environment_variables": []
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/budibu85/mcp_server_dummy",
+    "source": "github"
+  },
+  "version_detail": {
+    "version": "0.1.0-beta"
+  }
+}
