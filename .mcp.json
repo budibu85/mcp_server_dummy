@@ -13,6 +13,7 @@
       }
     },
     "MCP-Server-Dummy-Docker": {
+      "type": "stdio",
       "command": "docker",
       "args": [
         "run",
