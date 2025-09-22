@@ -19,6 +19,7 @@
     <Description>An MCP server using the MCP C# SDK.</Description>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <UserSecretsId>5205f3a0-7aab-4d48-ab64-6826e302d52c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

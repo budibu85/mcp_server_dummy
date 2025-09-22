@@ -1,5 +1,6 @@
 using MCP.Server.Dummy.Services;
 using MCP_Server_Local.Tools;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -7,6 +8,9 @@ using System.Net.Http;
 
 var builder = Host.CreateApplicationBuilder(args);
 
+builder.Configuration
+    .AddEnvironmentVariables()
+    .AddUserSecrets<Program>();
 
 // Configure all logs to go to stderr (stdout is used for the MCP protocol messages).
 builder.Logging.AddConsole(o => o.LogToStandardErrorThreshold = LogLevel.Trace);
@@ -17,7 +21,7 @@ builder.Services.AddHttpClient<GitHubService>(client =>
     client.BaseAddress = new Uri("https://api.github.com/");
     client.DefaultRequestHeaders.Add("User-Agent", "MCP-Server-Dummy/1.0");
     client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
-    client.DefaultRequestHeaders.Add("Authorization", $"token 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");
+    client.DefaultRequestHeaders.Add("Authorization", $"token {builder.Configuration["GITHUB_PAT"]}");
 
 });
 
