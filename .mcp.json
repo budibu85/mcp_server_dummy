@@ -6,11 +6,8 @@
       "args": [
         "run",
         "--project",
-        "."
-      ],
-      "env": {
-        "WEATHER_CHOICES": "soleggiato,umido,gelido,perfetto"
-      }
+        "./MCP.Server.Dummy/MCP.Server.Dummy.csproj"
+      ]
     },
     "MCP-Server-Dummy-Docker": {
       "type": "stdio",
@@ -19,13 +16,8 @@
         "run",
         "-i",
         "--rm",
-        "-e",
-        "WEATHER_CHOICES",
         "mcpserverdummy:latest"
-      ],
-      "env": {
-        "WEATHER_CHOICES": "soleggiato,umido,gelido,perfetto"
-      }
+      ]
     }
   }
 }
